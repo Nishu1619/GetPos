@@ -1,0 +1,260 @@
+frappe.msgprint(`<div class="timeline">
+   <div class="container1 left complete-arrow">
+    <div class="content1 Gray">
+            <button class="button1" id="Productuon_plan"><h2>
+      Prduction Plan</h2></button>
+        <ul id="Production_plan_tasks">
+      <li><a href="">task1</a></li>
+       <li><a href="">task2</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container1 right complete-arrow">
+    <div class="content1 Green" >
+      <button class="button1" id="Material_request"><h2>Material Request</h2></button>
+     <ul id="Material_request_tasks">
+      <li><a href="">task1</a></li>
+       <li><a href="">task2</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container1 container2 left">
+    <div class="content1 Amber" >
+     <button class="button1" id="Purchase_order">  <h2>Purchase Order</h2></button>
+     <ul id="Purchase_order_tasks">
+      <li><a href="">task1</a></li>
+       <li><a href="">task2</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container1 right">
+    <div class="content1 Amber" >
+      <button class="button1" id="Purchase_receipt"> <h2>Purchase Receipt</h2></button>
+      <ul id="Purchase_receipt_tasks">
+      <li><a href="">task1</a></li>
+       <li><a href="">task2</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container1 left">
+    <div class="content1 Amber">
+      <button class="button1" id="Purchase_invoice"> <h2>Purchase Invoice</h2></button>
+        <ul id="Purchase_invoice_tasks">
+      <li>task1</li>
+      <li>task2</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<style>
+* {
+  box-sizing: border-box;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #3096f0;
+  top: 0;
+  bottom: 0;
+  left: 56px;
+  margin-left: -3px;
+}
+/* Container around content */
+.container1 {
+padding: 10px 22px;
+    position: relative;
+    background-color: inherit;
+    width: 80%
+}
+.modal-body{
+background:#fff;
+}
+.modal .modal-content{
+border:none;
+}
+/* The circles on the timeline */
+
+.complete-arrow::after {
+  background-color: #0E9700 !important;
+}
+
+.container1::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: -27px;
+  background-color: #c5c5c5;
+  border: 4px solid #3096f0;
+  top: 40px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.Gray{
+background-color:#ebffe9 !important;
+}
+h2{
+color:#0E9700;
+}
+.Amber h2{
+color:#bfbfbf !important;
+}
+.Green{
+background-color:#ebffe9 !important;
+}
+.Amber{
+background-color:#f2f2f2 !important;
+}
+.container2::after {
+background-color: #FF9F55;
+}
+/* Place the container to the left */
+.left {
+  left: 70px;
+}
+/* Place the container to the right */
+.right {
+  left: 70px;
+}
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+      transform: rotate(180deg);
+    height: 0;
+    position: absolute;
+    top: 44px;
+    width: 0;
+    z-index: 1;
+    left: 12px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ebffe9 ;
+}
+h2 {
+    font-size: 20px;
+}
+/* Add arrows to the right container (pointing left) */
+.right::before {
+   content: " ";
+    transform: rotate(180deg);
+    height: 0;
+    position: absolute;
+    top: 44px;
+    width: 0;
+    z-index: 1;
+    left: 12px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #ebffe9 ;
+}
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -27px;
+}
+/* The actual content */
+.content1 {
+    padding: 30px 14px 15px 14px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+/* Media queries - Responsive timeline on screens less than 600px wide */
+.button1{
+background:none;
+border:none;
+cursor:pointer;
+}
+ .button1:focus {outline:none;}
+ .active{
+ display:block !important;
+ }
+ 
+ 
+ 
+ .container2::after {
+    -webkit-animation: 1s blink ease infinite;
+  -moz-animation: 1s blink ease infinite;
+  -ms-animation: 1s blink ease infinite;
+  -o-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+}
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.complete::before{
+border-color: transparent transparent transparent #f2f2f2 !important;
+}
+</style>
+<script>
+document.getElementById("Purchase_invoice_tasks").style.display = "none";
+document.getElementById("Purchase_receipt_tasks").style.display = "none";
+document.getElementById("Purchase_order_tasks").style.display = "none";
+document.getElementById("Material_request_tasks").style.display = "none";
+document.getElementById("Production_plan_tasks").style.display = "none";
+  $("#Productuon_plan").click(function(){
+    $('#Production_plan_tasks').toggleClass('active');
+  });
+    $("#Material_request").click(function(){
+    $('#Material_request_tasks').toggleClass('active');
+  });
+    $("#Purchase_order").click(function(){
+    $('#Purchase_order_tasks').toggleClass('active');
+  });
+    $("#Purchase_receipt").click(function(){
+    $('#Purchase_receipt_tasks').toggleClass('active');
+  });
+   $("#Purchase_invoice").click(function(){
+    $('#Purchase_invoice_tasks').toggleClass('active');
+  });
+</script>
+`)
